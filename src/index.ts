@@ -1,4 +1,4 @@
-import express, { type Request, type Response } from "express";
+import express, { response, type Request, type Response } from "express";
 import { db } from "./db";
 import { attendees, attendeesInsertSchema } from "./db/schema/attendee";
 import "dotenv/config";
@@ -25,6 +25,10 @@ app.post(
   asyncWrap(async (req: Request, res: Response) => {
     const body = req.body;
     await db.insert(attendees).values(body);
+    res.status(201).json({
+      status: true,
+      message: "Attendance recorded successfully",
+    });
   }),
 );
 
@@ -34,6 +38,10 @@ app.post(
   asyncWrap(async (req: Request, res: Response) => {
     const body = req.body;
     await db.insert(feedback).values(body);
+    res.status(201).json({
+      status: true,
+      message: "Feedback recorded successfully",
+    });
   }),
 );
 
