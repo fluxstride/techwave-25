@@ -4,7 +4,7 @@ import { createInsertSchema } from "drizzle-zod";
 import { v4 as uuidv4 } from "uuid";
 import { z } from "zod/v4";
 
-export const attendees = pgTable("messages", {
+export const attendees = pgTable("attendees", {
   id: varchar("id").primaryKey().$defaultFn(uuidv4),
   name: text().notNull(),
   email: text().notNull(),

@@ -4,7 +4,7 @@ import { createInsertSchema } from "drizzle-zod";
 import { v4 as uuidv4 } from "uuid";
 import { z } from "zod/v4";
 
-export const feedback = pgTable("messages", {
+export const feedback = pgTable("feedbacks", {
   id: varchar("id").primaryKey().$defaultFn(uuidv4),
   rating: text().notNull(),
   feedback: text().notNull(),
