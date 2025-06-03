@@ -39,6 +39,6 @@ app.post(
 
 app.use(pageNotFoundMiddleware);
 app.use(errorMiddleware);
-app.listen(PORT, () => console.log(`app is running on ${PORT}`));
+// app.listen(PORT, () => console.log(`app is running on ${PORT}`));
 
 export default app;
